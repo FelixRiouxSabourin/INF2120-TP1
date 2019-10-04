@@ -1,4 +1,4 @@
-###INF2120-TP1 
+#INF2120-TP1 
  
 Salut Félix, pour ce premier push je voulais juste te dire que je suis entrain de voir avec un ami comment commencer la classe main du projet.
 
