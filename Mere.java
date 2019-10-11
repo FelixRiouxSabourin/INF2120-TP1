@@ -19,14 +19,14 @@ import java.util.Scanner;
         }
 
 
-        public static int d(String nom) throws IOException {
+        public static int d(String nomFichier) throws IOException {
 
             int d = 0;
-            nom = getNomFichier();
+            nomFichier = getNomFichier();
 
             try {
 
-                FileReader fileReader = new FileReader(nom);
+                FileReader fileReader = new FileReader(nomFichier);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
                 d = Integer.parseInt(bufferedReader.readLine());
 

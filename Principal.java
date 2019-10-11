@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Principal {
@@ -36,8 +35,6 @@ public class Principal {
         Mere echantillon =  new Mere("test1.txt");
 
         System.out.println(echantillon.d(echantillon.getNomFichier()));
-
-
          */
 
     }
