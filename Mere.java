@@ -122,5 +122,17 @@ public class Mere {
         return xij;
     }
 
+    public static int factoriel(int d) throws IOException {
+
+        int factoriel = 1;
+        d = d(Mere.getNomFichier());
+
+        for (int i = 2; i <= d; i++){
+            factoriel = factoriel * i;
+        }
+
+        return factoriel;
+    }
+
 }
 

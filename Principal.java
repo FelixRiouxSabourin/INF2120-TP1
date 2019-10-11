@@ -26,10 +26,14 @@ public class Principal {
                 break;
         }
 
+        // System.out.println(Mere.factoriel(Mere.d(Mere.getNomFichier())));
 
+        /*
         for (Double aDouble : resultat) {
             System.out.println(aDouble);
         }
+
+         */
 
         // System.out.println(Mere.d(Mere.getNomFichier()));
 
