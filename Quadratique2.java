@@ -14,4 +14,6 @@ public class Quadratique2 extends Lineaire1 {
         return resultat;
     }
 
+
+
 }

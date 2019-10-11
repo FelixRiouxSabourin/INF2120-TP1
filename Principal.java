@@ -1,10 +1,9 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Principal {
-
 
     public static void main(String[] args) throws IOException {
 
@@ -28,14 +27,19 @@ public class Principal {
                 break;
         }
 
-        //System.out.println(resultat);
+        for (Double aDouble : resultat) {
+            System.out.println(aDouble);
+        }
 
-        //Mere echantillon =  new Mere();
 
-        //System.out.println(echantillon.d(echantillon.getNomFichier()));
+        /*
+        Mere echantillon =  new Mere("test1.txt");
 
+        System.out.println(echantillon.d(echantillon.getNomFichier()));
+
+
+         */
 
     }
-
 
 }
