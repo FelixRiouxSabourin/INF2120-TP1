@@ -5,21 +5,18 @@ import java.util.Scanner;
 
 public class Principal {
 
-    public static String nomFichier(){
-        System.out.println("Entrez le nom d'un fichier : ");
-        Scanner sc = new Scanner(System.in);
-        return "src\\" + sc.nextLine();
-    }
 
     public static void main(String[] args) throws IOException {
 
         System.out.println("Entrez le nom d'un fichier : ");
+
         Scanner sc = new Scanner(System.in);
-        String fichier = "src\\" + sc.nextLine();
+
+        Mere.setNomFichier("src\\" + sc.nextLine());
 
         ArrayList<Double> resultat = new ArrayList<>();
 
-        switch (Mere.d(Mere.nomFichier())){
+        switch (Mere.d(Mere.getNomFichier())){
             case 1:
                 resultat = Lineaire1.resultat();
                 break;
@@ -33,10 +30,9 @@ public class Principal {
 
         //System.out.println(resultat);
 
+        //Mere echantillon =  new Mere();
 
-        Mere echantillon =  new Mere();
-
-        System.out.println(echantillon.d(echantillon.nomFichier()));
+        //System.out.println(echantillon.d(echantillon.getNomFichier()));
 
 
     }

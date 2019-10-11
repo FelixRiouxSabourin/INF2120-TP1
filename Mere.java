@@ -1,6 +1,6 @@
-    import java.io.*;
-    import java.util.ArrayList;
-    import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
     public class Mere {
 
@@ -15,12 +15,7 @@
         }
 
         public static void setNomFichier(String nomFichier) {
-
-            System.out.println("Entrez le nom d'un fichier : ");
-
-            Scanner sc = new Scanner(System.in);
-
-            Mere.nomFichier = "src\\" + sc.nextLine();
+            Mere.nomFichier = nomFichier;
         }
 
 
