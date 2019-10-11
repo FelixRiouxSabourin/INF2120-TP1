@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -48,7 +49,7 @@ public class Mere {
     // Prend en arguemnt nomFichier et retourne le ArrayList valeurDouble
     // valeurDouble est un ArrayList qui contient tous les doubles contenus
     // dans le fichie specifie par l'utilisateur du programme.
-    public ArrayList<Double> valeurDouble(String nomFichier) {
+    public static ArrayList<Double> valeurDouble(String nomFichier) {
 
         ArrayList<Double> valeurDouble = new ArrayList<Double>();
         nomFichier = Mere.getNomFichier();
@@ -82,7 +83,7 @@ public class Mere {
 
     // Prend l'ArrayList valeurDouble et retourne x0
     // x0 est le deuxieme double de notre ArrayList valeurDouble.
-    public double x0(ArrayList valeurDouble) {
+    public static double x0(ArrayList valeurDouble) {
         double x0 = 0;
         valeurDouble = valeurDouble(Mere.getNomFichier());
 
@@ -94,7 +95,7 @@ public class Mere {
     // Prend l'ArrayList valeur double et retourne l'ArrayList valeursY
     // Les deux premieres valeurs de l'ArrayList valeurDouble sont supprimees
     // puis le reste est stocke dans la nouvelle ArrayList valeursY
-    public ArrayList valeursY(ArrayList valeurDouble){
+    public static ArrayList<Double> valeursY(ArrayList valeurDouble){
         valeurDouble = valeurDouble(Mere.getNomFichier());
         valeurDouble.remove(0); //supprimer h
         valeurDouble.remove(0); //supprimer x0
@@ -127,11 +128,27 @@ public class Mere {
         int factoriel = 1;
         d = d(Mere.getNomFichier());
 
+
         for (int i = 2; i <= d; i++){
             factoriel = factoriel * i;
         }
 
         return factoriel;
+    }
+
+    public static double deltayi (ArrayList <Double> deltayi) throws IOException {
+
+        int d = d(Mere.getNomFichier());
+        ArrayList<Double> valeursY = valeursY(valeurDouble(Mere.getNomFichier()));
+        int i = 0;
+        double j = 0.0;
+
+        while ( i < Mere.x0(valeursY)-1) {
+            j = valeursY.get(i+1) - valeursY.get(i);
+            deltayi.add(j);
+            i++;
+        }
+
     }
 
 }
