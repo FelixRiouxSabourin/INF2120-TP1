@@ -83,6 +83,7 @@ public class Mere {
     // Prend l'ArrayList valeurDouble et retourne x0
     // x0 est le deuxieme double de notre ArrayList valeurDouble.
     public double x0(ArrayList valeurDouble) {
+
         double x0 = 0;
         valeurDouble = valeurDouble(Mere.getNomFichier());
 
@@ -95,6 +96,7 @@ public class Mere {
     // Les deux premieres valeurs de l'ArrayList valeurDouble sont supprimees
     // puis le reste est stocke dans la nouvelle ArrayList valeursY
     public ArrayList valeursY(ArrayList valeurDouble){
+
         valeurDouble = valeurDouble(Mere.getNomFichier());
         valeurDouble.remove(0); //supprimer h
         valeurDouble.remove(0); //supprimer x0
@@ -113,6 +115,7 @@ public class Mere {
         double max = (double) valeursY.get(valeursY.size()-1);
         double i=0;
         double j=0;
+
         while (i <= max){
             j= x0(valeurDouble(Mere.getNomFichier())) + i* h(valeurDouble(Mere.getNomFichier()));
             xij.add(j);
@@ -123,7 +126,6 @@ public class Mere {
     }
 
     public static int factoriel(int d) throws IOException {
-
         int factoriel = 1;
         d = d(Mere.getNomFichier());
 
