@@ -1,5 +1,4 @@
-    import java.io.File;
-    import java.io.FileNotFoundException;
+    import java.io.*;
     import java.util.ArrayList;
     import java.util.Scanner;
 
@@ -15,7 +14,7 @@
 
         }
 
-        public int d(String nom) {
+        public int d(String nom) throws IOException {
 
             int d = 0;
             nom = nomFichier();
@@ -23,13 +22,10 @@
 
             try {
 
-                Scanner fichier = new Scanner(new File(nom));
+                FileReader fileReader = new FileReader(nom);
+                BufferedReader bufferedReader = new BufferedReader(fileReader);
+                d = Integer.parseInt(bufferedReader.readLine());
 
-                if (fichier.hasNextInt()) {
-
-                    d = fichier.nextInt();
-
-                }
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

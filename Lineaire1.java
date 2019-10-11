@@ -11,6 +11,7 @@ public class Lineaire1 extends Mere {
         }
         return delta;
     }
+
     public ArrayList a (ArrayList delta){
         delta = delta();
         ArrayList a =new ArrayList();
@@ -19,8 +20,8 @@ public class Lineaire1 extends Mere {
             a.add(valeur);
         }
         return a;
-
     }
+
     public ArrayList b (ArrayList a){
         a = a(delta());
         ArrayList b = new ArrayList();
@@ -36,6 +37,5 @@ public class Lineaire1 extends Mere {
         }
         return b;
     }
-
 
 }
