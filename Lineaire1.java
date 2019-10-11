@@ -2,10 +2,12 @@ import java.util.ArrayList;
 
 public class Lineaire1 extends Mere {
 
+
     public Lineaire1(String nomFichier) {
         super(nomFichier);
     }
 
+    /*
     public ArrayList delta(){
         ArrayList delta = new ArrayList();
         for (int i=0;i>valeursY(valeurDouble(Mere.getNomFichier())).size();i++){
@@ -41,13 +43,13 @@ public class Lineaire1 extends Mere {
         }
         return b;
     }
+     */
+
+
 
     public static ArrayList<Double> resultat(){
         ArrayList<Double> resultat = new ArrayList<>();
         double yij = 0;
-
-
-
         return resultat;
     }
 

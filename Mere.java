@@ -10,14 +10,23 @@ public class Mere {
         Mere.nomFichier = nomFichier;
     }
 
+    // Cherche la variable de classe nomFichier
+    // Elle est public et static afin de pouvoir utiliser le le nom du fichier a
+    // partir de n'importe ou.
     public static String getNomFichier() {
         return nomFichier;
     }
 
+    // Definit la variable de classe nomFichier
+    // Elle est public et static afin de pouvoir definir le le nom du fichier a
+    // partir de n'importe ou.
     public static void setNomFichier(String nomFichier) {
         Mere.nomFichier = nomFichier;
     }
 
+    // Prend en argument le nom du fichier et retourne d.
+    // On utilise FileReader et BufferedReader pour ecrire dans la variable d
+    // la premiere ligne du fichier texte specifie par l'utilisateur du programme.
     public static int d(String nomFichier) throws IOException {
 
         int d = 0;
@@ -36,6 +45,9 @@ public class Mere {
         return d;
     }
 
+    // Prend en arguemnt nomFichier et retourne le ArrayList valeurDouble
+    // valeurDouble est un ArrayList qui contient tous les doubles contenus
+    // dans le fichie specifie par l'utilisateur du programme.
     public ArrayList<Double> valeurDouble(String nomFichier) {
 
         ArrayList<Double> valeurDouble = new ArrayList<Double>();
@@ -56,6 +68,8 @@ public class Mere {
         return valeurDouble;
     }
 
+    // Prend en arguemnt l'ArrayList valeurDouble et retourne h
+    // h est le premier double de notre ArrayList valeurDouble.
     public double h(ArrayList valeurDouble) {
 
         double h = 0;
@@ -66,6 +80,8 @@ public class Mere {
         return h;
     }
 
+    // Prend l'ArrayList valeurDouble et retourne x0
+    // x0 est le deuxieme double de notre ArrayList valeurDouble.
     public double x0(ArrayList valeurDouble) {
         double x0 = 0;
         valeurDouble = valeurDouble(Mere.getNomFichier());
@@ -75,6 +91,9 @@ public class Mere {
         return x0;
     }
 
+    // Prend l'ArrayList valeur double et retourne l'ArrayList valeursY
+    // Les deux premieres valeurs de l'ArrayList valeurDouble sont supprimees
+    // puis le reste est stocke dans la nouvelle ArrayList valeursY
     public ArrayList valeursY(ArrayList valeurDouble){
         valeurDouble = valeurDouble(Mere.getNomFichier());
         valeurDouble.remove(0); //supprimer h
@@ -84,6 +103,9 @@ public class Mere {
 
     }
 
+    // Prend l'ArrayList valeursY et retourne l'ArrayList xij
+    // La variable max correspond a la derniere valeur de l'ArrayList valeursY
+    // remplit le ArrayList avec trois valeurs de x entre chaque x
     public ArrayList xij(ArrayList valeursY){
 
         ArrayList xij = new ArrayList();
@@ -99,7 +121,6 @@ public class Mere {
 
         return xij;
     }
-
 
 }
 
