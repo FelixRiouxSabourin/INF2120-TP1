@@ -2,107 +2,104 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-    public class Mere {
+public class Mere {
 
-        protected static String nomFichier;
+    protected static String nomFichier;
 
-        public Mere(String nomFichier){
-            Mere.nomFichier = nomFichier;
+    public Mere(String nomFichier){
+        Mere.nomFichier = nomFichier;
+    }
+
+    public static String getNomFichier() {
+        return nomFichier;
+    }
+
+    public static void setNomFichier(String nomFichier) {
+        Mere.nomFichier = nomFichier;
+    }
+
+    public static int d(String nomFichier) throws IOException {
+
+        int d = 0;
+        nomFichier = getNomFichier();
+
+        try {
+
+            FileReader fileReader = new FileReader(nomFichier);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            d = Integer.parseInt(bufferedReader.readLine());
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
 
-        public static String getNomFichier() {
-            return nomFichier;
-        }
+        return d;
+    }
 
-        public static void setNomFichier(String nomFichier) {
-            Mere.nomFichier = nomFichier;
-        }
+    public ArrayList<Double> valeurDouble(String nomFichier) {
 
+        ArrayList<Double> valeurDouble = new ArrayList<Double>();
+        nomFichier = Mere.getNomFichier();
 
-        public static int d(String nomFichier) throws IOException {
+        try {
 
-            int d = 0;
-            nomFichier = getNomFichier();
+            Scanner fichier = new Scanner(new File(nomFichier));
 
-            try {
+            if (fichier.hasNextDouble()) {
 
-                FileReader fileReader = new FileReader(nomFichier);
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                d = Integer.parseInt(bufferedReader.readLine());
+                valeurDouble.add(fichier.nextDouble());
 
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             }
-
-            return d;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        return valeurDouble;
+    }
 
+    public double h(ArrayList valeurDouble) {
 
-        public ArrayList<Double> valeurDouble(String nomFichier) {
+        double h = 0;
+        valeurDouble = valeurDouble(Mere.getNomFichier());
 
-            ArrayList<Double> valeurDouble = new ArrayList<Double>();
-            nomFichier = Mere.getNomFichier();
+        h = (double) valeurDouble.get(0);
 
-            try {
+        return h;
+    }
 
-                Scanner fichier = new Scanner(new File(nomFichier));
+    public double x0(ArrayList valeurDouble) {
+        double x0 = 0;
+        valeurDouble = valeurDouble(Mere.getNomFichier());
 
-                if (fichier.hasNextDouble()) {
+        x0 = (double) valeurDouble.get(1);
 
-                    valeurDouble.add(fichier.nextDouble());
+        return x0;
+    }
 
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            return valeurDouble;
-        }
+    public ArrayList valeursY(ArrayList valeurDouble){
+        valeurDouble = valeurDouble(Mere.getNomFichier());
+        valeurDouble.remove(0); //supprimer h
+        valeurDouble.remove(0); //supprimer x0
 
-        public double h(ArrayList valeurDouble) {
-
-            double h = 0;
-            valeurDouble = valeurDouble(Mere.getNomFichier());
-
-            h = (double) valeurDouble.get(0);
-
-            return h;
-        }
-
-        public double x0(ArrayList valeurDouble) {
-            double x0 = 0;
-            valeurDouble = valeurDouble(Mere.getNomFichier());
-
-            x0 = (double) valeurDouble.get(1);
-
-            return x0;
-        }
-
-        public ArrayList valeursY(ArrayList valeurDouble){
-            valeurDouble = valeurDouble(Mere.getNomFichier());
-            valeurDouble.remove(0); //supprimer h
-            valeurDouble.remove(0); //supprimer x0
-
-            return valeurDouble;
-
-        }
-
-        public ArrayList xij(ArrayList valeursY){
-
-            ArrayList xij = new ArrayList();
-            valeursY=valeursY(valeurDouble(Mere.getNomFichier()));
-            double max = (double) valeursY.get(valeursY.size()-1);
-            double i=0;
-            double j=0;
-            while (i <= max){
-                j= x0(valeurDouble(Mere.getNomFichier())) + i* h(valeurDouble(Mere.getNomFichier()));
-                xij.add(j);
-                i+=0.25;
-            }
-
-            return xij;
-        }
-
+        return valeurDouble;
 
     }
+
+    public ArrayList xij(ArrayList valeursY){
+
+        ArrayList xij = new ArrayList();
+        valeursY=valeursY(valeurDouble(Mere.getNomFichier()));
+        double max = (double) valeursY.get(valeursY.size()-1);
+        double i=0;
+        double j=0;
+        while (i <= max){
+            j= x0(valeurDouble(Mere.getNomFichier())) + i* h(valeurDouble(Mere.getNomFichier()));
+            xij.add(j);
+            i+=0.25;
+        }
+
+        return xij;
+    }
+
+
+}
 

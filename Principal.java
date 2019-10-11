@@ -26,16 +26,13 @@ public class Principal {
                 break;
         }
 
+
         for (Double aDouble : resultat) {
             System.out.println(aDouble);
         }
 
+        // System.out.println(Mere.d(Mere.getNomFichier()));
 
-        /*
-        Mere echantillon =  new Mere("test1.txt");
-
-        System.out.println(echantillon.d(echantillon.getNomFichier()));
-         */
 
     }
 
