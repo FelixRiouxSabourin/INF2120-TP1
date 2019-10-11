@@ -2,6 +2,10 @@ import java.util.ArrayList;
 
 public class Quadratique2 extends Lineaire1 {
 
+    public Quadratique2(String nomFichier) {
+        super(nomFichier);
+    }
+
     public static ArrayList<Double> resultat(){
         ArrayList<Double> resultat = new ArrayList<>();
         double yij = 0;
