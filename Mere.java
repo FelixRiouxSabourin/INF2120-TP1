@@ -135,7 +135,7 @@ public class Mere {
         return factoriel;
     }
 
-    public static double deltayi (ArrayList <Double> deltayi) throws IOException {
+    public static ArrayList<Double> deltayi (ArrayList <Double> deltayi) throws IOException {
 
         int d = d(Mere.getNomFichier());
         ArrayList<Double> valeursY = valeursY(valeurDouble(Mere.getNomFichier()));
@@ -147,6 +147,8 @@ public class Mere {
             deltayi.add(j);
             i++;
         }
+
+        return deltayi;
 
     }
 
