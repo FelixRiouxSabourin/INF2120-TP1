@@ -71,7 +71,7 @@ public class Mere {
 
     // Prend en arguemnt l'ArrayList valeurDouble et retourne h
     // h est le premier double de notre ArrayList valeurDouble.
-    public double h(ArrayList valeurDouble) {
+    public static double h(ArrayList valeurDouble) {
 
         double h = 0;
         valeurDouble = valeurDouble(Mere.getNomFichier());
@@ -96,35 +96,49 @@ public class Mere {
     // Les deux premieres valeurs de l'ArrayList valeurDouble sont supprimees
     // puis le reste est stocke dans la nouvelle ArrayList valeursY
     public static ArrayList<Double> valeursY(ArrayList valeurDouble){
+
+        ArrayList <Double> valeursY = valeursY(valeurDouble(nomFichier));
+
         valeurDouble = valeurDouble(Mere.getNomFichier());
         valeurDouble.remove(0); //supprimer h
         valeurDouble.remove(0); //supprimer x0
 
-        return valeurDouble;
+        ArrayList valeurY = valeurDouble;
+
+        return valeursY;
 
     }
 
     // Prend l'ArrayList valeursY et retourne l'ArrayList xij
     // La variable max correspond a la derniere valeur de l'ArrayList valeursY
     // remplit le ArrayList avec trois valeurs de x entre chaque x
-    public ArrayList xij(ArrayList valeursY){
+    public static ArrayList<Double> xij(ArrayList <Double> valeursY){
 
-        ArrayList xij = new ArrayList();
-        valeursY=valeursY(valeurDouble(Mere.getNomFichier()));
-        double max = (double) valeursY.get(valeursY.size()-1);
+        valeursY = valeursY(valeurDouble(Mere.getNomFichier()));
+
+        ArrayList<Double> xij = null;
+        xij = new ArrayList<>();
+
+        double max = valeursY.get(valeursY.size()-1);
         double i=0;
         double j=0;
 
         while (i <= max){
-            j= x0(valeurDouble(Mere.getNomFichier())) + i* h(valeurDouble(Mere.getNomFichier()));
+            j= x0(valeurDouble(Mere.getNomFichier())) + i*h(valeurDouble(Mere.getNomFichier()));
             xij.add(j);
             i+=0.25;
         }
 
+        if ( xij.get(xij.size()-1) > valeursY.get(valeursY.size()-1) ) {
+
+            xij.remove(xij.size() - 1);
+        }
+
         return xij;
+
     }
 
-    public static int factoriel(int d) throws IOException {
+    public static int factoriel (int d) throws IOException {
         int factoriel = 1;
         d = d(Mere.getNomFichier());
 
@@ -151,7 +165,6 @@ public class Mere {
         return deltayi;
 
     }
-
 
 }
 

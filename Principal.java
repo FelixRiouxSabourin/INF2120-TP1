@@ -35,7 +35,7 @@ public class Principal {
 
          */
 
-        // System.out.println(Mere.d(Mere.getNomFichier()));
+         System.out.println(Mere.d(Mere.getNomFichier()));
 
 
     }
