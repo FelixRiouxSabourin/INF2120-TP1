@@ -45,7 +45,9 @@ public class Lineaire1 extends Mere {
     }
      */
 
-
+    // deltai = yi+1 + yi
+    // a = deltai/h
+    // b = yi - axi
 
     public static ArrayList<Double> resultat(){
         ArrayList<Double> resultat = new ArrayList<>();

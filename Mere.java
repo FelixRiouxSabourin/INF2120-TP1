@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,21 +50,26 @@ public class Mere {
     // dans le fichie specifie par l'utilisateur du programme.
     public static ArrayList<Double> valeurDouble(String nomFichier) {
 
-        ArrayList<Double> valeurDouble = new ArrayList<Double>();
+        ArrayList<Double> valeurDouble = new ArrayList<>();
         nomFichier = Mere.getNomFichier();
+
 
         try {
 
             Scanner fichier = new Scanner(new File(nomFichier));
 
-            if (fichier.hasNextDouble()) {
+            while (fichier.hasNext()) {
 
-                valeurDouble.add(fichier.nextDouble());
+                valeurDouble.add(Double.parseDouble(fichier.nextLine()));
 
             }
+
+            valeurDouble.remove(0);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         return valeurDouble;
     }
 
@@ -83,12 +87,13 @@ public class Mere {
 
     // Prend l'ArrayList valeurDouble et retourne x0
     // x0 est le deuxieme double de notre ArrayList valeurDouble.
-    public static double x0(ArrayList valeurDouble) {
-        double x0 = 0;
+    public static double x0(ArrayList<Double> valeurDouble) {
+        double x0;
         valeurDouble = valeurDouble(Mere.getNomFichier());
 
-        x0 = (double) valeurDouble.get(1);
+        x0 = valeurDouble.get(1);
 
+        System.out.println("x0 = "+ x0);
         return x0;
     }
 
@@ -166,5 +171,20 @@ public class Mere {
 
     }
 
+
+/*    public static String VariableDescription() {
+
+        String toString = null;
+        try {
+            toString = "d = " + Mere.d(Mere.getNomFichier()) +
+                "x0 = " + Mere.x0(Mere.valeurDouble(Mere.getNomFichier())) +
+                "yi[] = " + valeursY(Mere.valeurDouble(Mere.getNomFichier())) +
+                "xij[] = + " + xij(valeursY(valeurDouble(Mere.getNomFichier)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return toString;
+    }*/
 }
 
