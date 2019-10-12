@@ -115,7 +115,7 @@ public class Mere {
         double i=0;
         double j=0;
 
-        while (i <= max){
+        while (i <= max -0.25){
             j= x0(valeurDouble(Mere.getNomFichier())) + i* h(valeurDouble(Mere.getNomFichier()));
             xij.add(j);
             i+=0.25;
@@ -142,7 +142,7 @@ public class Mere {
         int i = 0;
         double j = 0.0;
 
-        while ( i < Mere.x0(valeursY)-1) {
+        while ( i < valeursY.size()-1) {
             j = valeursY.get(i+1) - valeursY.get(i);
             deltayi.add(j);
             i++;
@@ -151,6 +151,7 @@ public class Mere {
         return deltayi;
 
     }
+
 
 }
 
