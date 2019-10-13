@@ -57,10 +57,11 @@ public class Mere {
         try {
 
             Scanner fichier = new Scanner(new File(nomFichier));
-
+            int i = 0;
             while (fichier.hasNext()) {
 
-                valeurDouble.add(Double.parseDouble(fichier.nextLine()));
+                valeurDouble.add(i, Double.parseDouble(fichier.nextLine()));
+                i++;
 
             }
 
@@ -93,7 +94,6 @@ public class Mere {
 
         x0 = valeurDouble.get(1);
 
-        System.out.println("x0 = "+ x0);
         return x0;
     }
 
@@ -102,13 +102,13 @@ public class Mere {
     // puis le reste est stocke dans la nouvelle ArrayList valeursY
     public static ArrayList<Double> valeursY(ArrayList valeurDouble){
 
-        ArrayList <Double> valeursY = valeursY(valeurDouble(nomFichier));
-
+        ArrayList <Double> valeursY;
         valeurDouble = valeurDouble(Mere.getNomFichier());
+
         valeurDouble.remove(0); //supprimer h
         valeurDouble.remove(0); //supprimer x0
 
-        ArrayList valeurY = valeurDouble;
+        valeursY = valeurDouble;
 
         return valeursY;
 
@@ -121,12 +121,12 @@ public class Mere {
 
         valeursY = valeursY(valeurDouble(Mere.getNomFichier()));
 
-        ArrayList<Double> xij = null;
+        ArrayList<Double> xij;
         xij = new ArrayList<>();
 
         double max = valeursY.get(valeursY.size()-1);
         double i=0;
-        double j=0;
+        double j;
 
         while (i <= max){
             j= x0(valeurDouble(Mere.getNomFichier())) + i*h(valeurDouble(Mere.getNomFichier()));
@@ -154,12 +154,13 @@ public class Mere {
         return factoriel;
     }
 
-    public static ArrayList<Double> deltayi (ArrayList <Double> deltayi) throws IOException {
+    // Calcule le delta a partir de l'ArrayList valeursY
+    public static ArrayList<Double> deltayi (ArrayList <Double> valeursY) throws IOException {
 
-        int d = d(Mere.getNomFichier());
-        ArrayList<Double> valeursY = valeursY(valeurDouble(Mere.getNomFichier()));
+        valeursY = valeursY(valeurDouble(Mere.getNomFichier()));
+        ArrayList<Double> deltayi = new ArrayList<>();
         int i = 0;
-        double j = 0.0;
+        double j;
 
         while ( i < valeursY.size()-1) {
             j = valeursY.get(i+1) - valeursY.get(i);
@@ -171,20 +172,5 @@ public class Mere {
 
     }
 
-
-/*    public static String VariableDescription() {
-
-        String toString = null;
-        try {
-            toString = "d = " + Mere.d(Mere.getNomFichier()) +
-                "x0 = " + Mere.x0(Mere.valeurDouble(Mere.getNomFichier())) +
-                "yi[] = " + valeursY(Mere.valeurDouble(Mere.getNomFichier())) +
-                "xij[] = + " + xij(valeursY(valeurDouble(Mere.getNomFichier)));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return toString;
-    }*/
 }
 

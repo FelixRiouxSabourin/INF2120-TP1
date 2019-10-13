@@ -26,22 +26,15 @@ public class Principal {
                 break;
         }
 
-        System.out.println("d = " + Mere.d(Mere.getNomFichier()));
+        /*System.out.println("d = " + Mere.d(Mere.getNomFichier()));
+        System.out.println("valeurDouble = " + Mere.valeurDouble(Mere.getNomFichier()));
         System.out.println("x0 = " + Mere.x0(Mere.valeurDouble(Mere.getNomFichier())));
+        System.out.println("h = " + Mere.h(Mere.valeurDouble(Mere.getNomFichier())));
         System.out.println("valeursY = " + Mere.valeursY(Mere.valeurDouble(Mere.getNomFichier())));
-        System.out.println("Deltayi = " + Mere.deltayi(Mere.valeursY(Mere.valeurDouble(Mere.getNomFichier()))));
         System.out.println("xij = " + Mere.xij(Mere.valeursY(Mere.valeurDouble(Mere.getNomFichier()))));
+        System.out.println("deltayi = " + Mere.deltayi(Mere.valeursY(Mere.valeurDouble(Mere.getNomFichier()))));*/
 
-        // System.out.println(Mere.factoriel(Mere.d(Mere.getNomFichier())));
 
-        /*
-        for (Double aDouble : resultat) {
-            System.out.println(aDouble);
-        }
-
-         */
-
-         // System.out.println(Mere.VariableDescription());
 
     }
 
