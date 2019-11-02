@@ -15,7 +15,7 @@ IMPORTANT : Il faut que le fichier se trouve dans le dossier "src" afin que le
     path fonctionne.
  */
 
-public class gitPrincipal {
+public class Principal {
 
     /*
     Lance le programme.
