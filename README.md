@@ -14,7 +14,6 @@ COURS : INF2120
 GROUPE : 030
 SESSION : A19
 
-
 L'énoncé est dans le fichier tp1aut2019.pdf
 
 
